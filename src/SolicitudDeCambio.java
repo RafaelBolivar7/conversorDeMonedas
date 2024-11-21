@@ -9,13 +9,13 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class SolicitudDeCambio {
-    public String RealizaCambio (String monedaOrigen, String monedaDestino, double monto){
+    public String realizaCambio (String monedaOrigen, String monedaDestino, double monto){
 
         try {
             String apiKey = "e6e5874100f88a012dbaa8ed";
 
             //Estructura URL Consulta
-            URI direccion = URI.create("https://v6.exchangerate-api.com/v6/" + apiKey + "/latest/" + monedaOrigen
+            URI direccion = URI.create("https://v6.exchangerate-api.com/v6/" + apiKey + "/pair/" + monedaOrigen
                     + "/" + monedaDestino + "/" + monto);
 
             //Http Protocolo
