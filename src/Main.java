@@ -25,14 +25,15 @@ public class Main {
                     4) Real Brasileño =>> Dolar
                     5) Dólar =>> Peso Colombiano
                     6) Peso Colombiano =>> Dolar
-                    7) Salir
+                    7) Otras Solicitudes
+                    8) Salir
                     
                     Elija una opción valida:
                     
                     ******************************************
                     """;
 
-        while (opcion != 7){
+        while (opcion != 8){
             try{
                 System.out.println(menu);
                 opcion = Integer.parseInt(lectura.nextLine());
@@ -41,28 +42,38 @@ public class Main {
                     case 1:
                         calculo.almacenaValores("USD", "ARS");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        generador.guardarJson(respuestas);
                         break;
                     case 2:
                         calculo.almacenaValores("ARS", "USD");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        generador.guardarJson(respuestas);
                         break;
                     case 3:
                         calculo.almacenaValores("USD", "BRL");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        generador.guardarJson(respuestas);
                         break;
                     case 4:
                         calculo.almacenaValores("BRL", "USD");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        generador.guardarJson(respuestas);
                         break;
                     case 5:
                         calculo.almacenaValores("USD", "COP");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        generador.guardarJson(respuestas);
                         break;
                     case 6:
                         calculo.almacenaValores("COP", "USD");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        generador.guardarJson(respuestas);
                         break;
                     case 7:
+                        calculo.almacenaOtrosValores();
+                        respuestas.add(calculo.getMensajeRespuesta());
+                        generador.guardarJson(respuestas);
+                    case 8:
                         break;
                     default:
                         System.out.println("Ingrese una opción válida");
@@ -72,7 +83,7 @@ public class Main {
                 System.out.println("Error. Ingrese un valor numérico válido.");
             }
         }
-        generador.guardarJson(respuestas);
+        //generador.guardarJson(respuestas);
         System.out.println("¡Programa Finalizado!");
     }
 }
