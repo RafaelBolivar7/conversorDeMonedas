@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -38,40 +40,45 @@ public class Main {
                 System.out.println(menu);
                 opcion = Integer.parseInt(lectura.nextLine());
 
+                //Crear la marca de tiempo
+                LocalDateTime myDateObj = LocalDateTime.now();
+                DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                String formattedDate = myDateObj.format(myFormatObj);
+
                 switch (opcion){
                     case 1:
                         calculo.almacenaValores("USD", "ARS");
-                        respuestas.add(calculo.getMensajeRespuesta());
+                        respuestas.add(formattedDate + " - " + calculo.getMensajeRespuesta());
                         generador.guardarJson(respuestas);
                         break;
                     case 2:
                         calculo.almacenaValores("ARS", "USD");
-                        respuestas.add(calculo.getMensajeRespuesta());
+                        respuestas.add(formattedDate + " - " + calculo.getMensajeRespuesta());
                         generador.guardarJson(respuestas);
                         break;
                     case 3:
                         calculo.almacenaValores("USD", "BRL");
-                        respuestas.add(calculo.getMensajeRespuesta());
+                        respuestas.add(formattedDate + " - " + calculo.getMensajeRespuesta());
                         generador.guardarJson(respuestas);
                         break;
                     case 4:
                         calculo.almacenaValores("BRL", "USD");
-                        respuestas.add(calculo.getMensajeRespuesta());
+                        respuestas.add(formattedDate + " - " + calculo.getMensajeRespuesta());
                         generador.guardarJson(respuestas);
                         break;
                     case 5:
                         calculo.almacenaValores("USD", "COP");
-                        respuestas.add(calculo.getMensajeRespuesta());
+                        respuestas.add(formattedDate + " - " + calculo.getMensajeRespuesta());
                         generador.guardarJson(respuestas);
                         break;
                     case 6:
                         calculo.almacenaValores("COP", "USD");
-                        respuestas.add(calculo.getMensajeRespuesta());
+                        respuestas.add(formattedDate + " - " + calculo.getMensajeRespuesta());
                         generador.guardarJson(respuestas);
                         break;
                     case 7:
                         calculo.almacenaOtrosValores();
-                        respuestas.add(calculo.getMensajeRespuesta());
+                        respuestas.add(formattedDate + " - " + calculo.getMensajeRespuesta());
                         generador.guardarJson(respuestas);
                     case 8:
                         break;
