@@ -41,21 +41,27 @@ public class Main {
                     case 1:
                         calculo.almacenaValores("USD", "ARS");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        break;
                     case 2:
                         calculo.almacenaValores("ARS", "USD");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        break;
                     case 3:
                         calculo.almacenaValores("USD", "BRL");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        break;
                     case 4:
                         calculo.almacenaValores("BRL", "USD");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        break;
                     case 5:
                         calculo.almacenaValores("USD", "COP");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        break;
                     case 6:
                         calculo.almacenaValores("COP", "USD");
                         respuestas.add(calculo.getMensajeRespuesta());
+                        break;
                     case 7:
                         break;
                     default:

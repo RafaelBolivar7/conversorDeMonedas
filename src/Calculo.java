@@ -32,7 +32,7 @@ public class Calculo {
         this.monto = Double.parseDouble(lectura.nextLine());
     }
      public String getMensajeRespuesta(){
-         String respuesta = getMonedaOrigen().toUpperCase()+ " " +getMonto() + "equivale a: "+ getMonedaDestino().toUpperCase()+ solicitud.realizaCambio(getMonedaOrigen(), getMonedaDestino(), getMonto());
+         String respuesta = getMonto() + " " +getMonedaOrigen().toUpperCase()+ " equivale a: "+ solicitud.realizaCambio(getMonedaOrigen(), getMonedaDestino(), getMonto()) + " " + getMonedaDestino().toUpperCase();
          System.out.println(respuesta);
          return respuesta;
      }
