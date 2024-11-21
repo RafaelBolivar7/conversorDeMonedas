@@ -31,4 +31,9 @@ public class Calculo {
         System.out.println("Ingrese el valor que desea convertir: ");
         this.monto = Double.parseDouble(lectura.nextLine());
     }
+     public String getMensajeRespuesta(){
+         String respuesta = getMonedaOrigen().toUpperCase()+ " " +getMonto() + "equivale a: "+ getMonedaDestino().toUpperCase()+ solicitud.realizaCambio(getMonedaOrigen(), getMonedaDestino(), getMonto());
+         System.out.println(respuesta);
+         return respuesta;
+     }
 }
