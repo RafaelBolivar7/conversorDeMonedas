@@ -12,7 +12,7 @@ public class Main {
         //Instanciar la solicitud de Conversion
         SolicitudDeCambio solicitud = new SolicitudDeCambio();
         Calculo calculo = new Calculo(solicitud);
-        //GeneradorArchivos generador = new GeneradorArchivos();
+        GeneradorArchivos generador = new GeneradorArchivos();
 
         List<String> respuestas = new ArrayList<>();
 
@@ -72,7 +72,7 @@ public class Main {
                 System.out.println("Error. Ingrese un valor numérico válido.");
             }
         }
-        //generador.guardarJson(respuestas);
+        generador.guardarJson(respuestas);
         System.out.println("¡Programa Finalizado!");
     }
 }
